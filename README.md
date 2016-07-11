@@ -1,2 +1,2 @@
 # fvchar
-FragrantVagrant Character Sheet Folder
+Rails Character Folder project
