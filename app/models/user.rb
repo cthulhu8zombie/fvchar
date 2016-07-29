@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+    # callbacks
+    before_save { self.email = email.downcase }
+    
     # name validations
-    validates :name, 
+    validates :name,
       presence: true, 
       length: { maximum: 50}
 
@@ -19,6 +22,7 @@ class User < ApplicationRecord
     VALID_EMAIL_REGEX = %r{\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z}i
     
     validates :email,
+      uniqueness: { case_sensitive: false },
       presence: true,
       length: { maximum: 255},
       format: { with: VALID_EMAIL_REGEX }
