@@ -6,5 +6,6 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal full_title("Help"), 'Help | Fragrant Vagrant\'s Character Port.fol.io'
     assert_equal full_title("About"), 'About | Fragrant Vagrant\'s Character Port.fol.io'
     assert_equal full_title("Contact"), 'Contact | Fragrant Vagrant\'s Character Port.fol.io'
+    assert_equal full_title("Sign Up"), 'Sign Up | Fragrant Vagrant\'s Character Port.fol.io'
   end
 end
