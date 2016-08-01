@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # yay! success
+      # Rails automatically infers from redirect_to @user that we want to redirect to user_url(@user).
+      flash[:success] = "Welcome #{@user.name}"
+      redirect_to @user
     else
       render 'new'
     end
